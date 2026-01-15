@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReWearBaby - Sustainable Baby Wear Subscription</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Brittany Signature Font - Brand Font */
+        @font-face {
+            font-family: 'Brittany Signature';
+            src: url('fonts/brittany_signature/BrittanySignature.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lora', Georgia, serif;
+            color: #6b5d52;
+            line-height: 1.7;
+            overflow-x: hidden;
+            background: #faf8f5;
+        }
+        
+        /* Brand Font - Brittany Signature */
+        .brand-font {
+            font-family: 'Brittany Signature', cursive;
+            font-weight: normal;
+            font-style: normal;
+            letter-spacing: 0.1em;
+            word-spacing: 0.2em;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 248, 245, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 25px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #e8dfd6;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #5d4e42;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 45px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #6b5d52;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+            letter-spacing: 0.3px;
+        }
+        
+        .nav-links a:hover {
+            color: #b89a7e;
+        }
+        
+        .cta-button {
+            background: #b89a7e;
+            color: #faf8f5;
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            font-family: 'Lora', Georgia, serif;
+            letter-spacing: 0.5px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(184, 154, 126, 0.25);
+            background: #a68970;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #faf8f5 0%, #f5f0ea 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 140px 60px 100px;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(232, 223, 214, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            pointer-events: none;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(232, 223, 214, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 5.5rem;
+            color: #5d4e42;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+            font-weight: normal;
+            line-height: 1.2;
+            letter-spacing: 0.1em;
+            word-spacing: 0.2em;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: #8b7966;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease 0.2s backwards;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            color: #9d8674;
+            font-style: italic;
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease 0.4s backwards;
+            letter-spacing: 0.3px;
+        }
+        
+        .hero-icons {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 90px;
+            animation: fadeInUp 1s ease 0.6s backwards;
+            flex-wrap: wrap;
+        }
+        
+        .hero-icon {
+            text-align: center;
+        }
+        
+        .hero-icon-circle {
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin: 0 auto 18px;
+            border: 2px solid #e8dfd6;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(184, 154, 126, 0.08);
+        }
+        
+        .hero-icon-circle i {
+            color: #b89a7e;
+            font-size: 2.2rem;
+        }
+        
+        .hero-icon:hover .hero-icon-circle {
+            transform: translateY(-8px);
+            border-color: #b89a7e;
+            box-shadow: 0 10px 30px rgba(184, 154, 126, 0.15);
+        }
+        
+        .hero-icon p {
+            font-size: 1.05rem;
+            color: #6b5d52;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 110px 60px;
+            background: #faf8f5;
+        }
+        
+        section:nth-child(even) {
+            background: linear-gradient(135deg, #f5f0ea 0%, #faf8f5 100%);
+        }
+        
+        .section-title {
+            font-size: 3.8rem;
+            color: #5d4e42;
+            text-align: center;
+            margin-bottom: 70px;
+            font-weight: normal;
+            letter-spacing: 0.1em;
+            word-spacing: 0.2em;
+        }
+        
+        /* How It Works */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 45px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        
+        .step {
+            background: #fff;
+            padding: 45px 35px;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 20px rgba(184, 154, 126, 0.08);
+        }
+        
+        .step:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(184, 154, 126, 0.15);
+        }
+        
+        .step-number {
+            width: 75px;
+            height: 75px;
+            background: linear-gradient(135deg, #f5f0ea 0%, #e8dfd6 100%);
+            color: #b89a7e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin: 0 auto 28px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .step h3 {
+            font-size: 1.6rem;
+            color: #5d4e42;
+            margin-bottom: 18px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .step p {
+            font-size: 1.08rem;
+            color: #6b5d52;
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+        }
+        
+        /* Pricing */
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        
+        .pricing-card {
+            background: #f0eae3;
+            border-radius: 28px;
+            flex: 1;
+            min-width: 400px;
+            max-width: 520px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+            box-shadow: 0 10px 35px rgba(93, 78, 66, 0.15);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(232, 223, 214, 0.5);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 18px 55px rgba(93, 78, 66, 0.25);
+        }
+        
+        .pricing-card-banner {
+            background: #5d4e42;
+            padding: 25px 35px;
+            text-align: center;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .pricing-card.full-circle .pricing-card-banner {
+            background: #5d4e42;
+        }
+        
+        .pricing-card.first-life .pricing-card-banner {
+            background: #5d4e42;
+        }
+        
+        .plan-name {
+            font-size: 2.5rem;
+            color: #faf8f5;
+            margin: 0;
+            font-weight: normal;
+            font-family: 'Brittany Signature', cursive;
+            letter-spacing: 0.1em;
+            word-spacing: 0.2em;
+            line-height: 1.2;
+        }
+        
+        .pricing-card.full-circle .plan-name {
+            color: #f5f3f0;
+        }
+        
+        .pricing-card.first-life .plan-name {
+            color: #f8f6e8;
+        }
+        
+        .pricing-card-content {
+            padding: 45px 40px 40px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .price {
+            font-size: 3.8rem;
+            color: #5d4e42;
+            font-weight: normal;
+            margin: 25px 0 45px 0;
+            font-family: 'Brittany Signature', cursive;
+            text-align: center;
+            line-height: 1;
+            letter-spacing: 0.05em;
+        }
+        
+        .price-period {
+            font-size: 1.4rem;
+            color: #8b7966;
+            font-weight: 400;
+            margin-left: 8px;
+            font-family: 'Lora', Georgia, serif;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 35px 0;
+            flex: 1;
+        }
+        
+        .pricing-features li {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(184, 154, 126, 0.2);
+            font-size: 1.2rem;
+            letter-spacing: 0.3px;
+            line-height: 1.7;
+            color: #5d4e42;
+            font-family: 'Lora', Georgia, serif;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features li:before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: #b89a7e;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 15px;
+            vertical-align: middle;
+            margin-top: -2px;
+        }
+        
+        .pricing-card .cta-button {
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+            background: #b89a7e;
+            color: #faf8f5;
+            padding: 18px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            font-family: 'Lora', Georgia, serif;
+            letter-spacing: 0.5px;
+            font-size: 1.1rem;
+            display: block;
+        }
+        
+        .pricing-card .cta-button:hover {
+            background: #a68970;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 154, 126, 0.3);
+        }
+        
+        /* Impact Section */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 45px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        
+        .impact-card {
+            background: #fff;
+            padding: 50px 35px;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 20px rgba(184, 154, 126, 0.08);
+        }
+        
+        .impact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(184, 154, 126, 0.15);
+        }
+        
+        .impact-icon {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+        }
+        
+        .impact-icon i {
+            color: #b89a7e;
+            font-size: 4.5rem;
+        }
+        
+        .impact-number {
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: #b89a7e;
+            margin: 18px 0;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .impact-label {
+            font-size: 1.08rem;
+            color: #6b5d52;
+            line-height: 1.7;
+            letter-spacing: 0.3px;
+        }
+        
+        /* Peru Story */
+        .peru-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .peru-content p {
+            font-size: 1.3rem;
+            line-height: 2;
+            margin: 28px 0;
+            color: #6b5d52;
+            text-align: center;
+            letter-spacing: 0.3px;
+        }
+        
+        .peru-visual {
+            margin: 80px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .peru-icons {
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+            margin-top: 70px;
+            flex-wrap: wrap;
+        }
+        
+        .peru-icon-box {
+            background: #fff;
+            padding: 45px 35px;
+            border-radius: 25px;
+            min-width: 220px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 20px rgba(184, 154, 126, 0.08);
+        }
+        
+        .peru-icon-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(184, 154, 126, 0.15);
+        }
+        
+        .peru-icon-box .icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .peru-icon-box .icon i {
+            color: #b89a7e;
+            font-size: 3.5rem;
+        }
+        
+        .inline-icon {
+            color: #b89a7e;
+            margin-right: 8px;
+        }
+        
+        .peru-icon-box h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: #5d4e42;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+        
+        .peru-icon-box p {
+            font-size: 1.05rem;
+            color: #6b5d52;
+            letter-spacing: 0.3px;
+        }
+        
+        /* CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, #f5f0ea 0%, #e8dfd6 100%);
+            text-align: center;
+            padding: 110px 60px;
+        }
+        
+        .final-cta h2 {
+            font-size: 4rem;
+            margin-bottom: 35px;
+            color: #5d4e42;
+            font-weight: normal;
+            font-family: 'Brittany Signature', cursive;
+            letter-spacing: 0.1em;
+            word-spacing: 0.2em;
+        }
+        
+        .final-cta p {
+            font-size: 1.5rem;
+            margin-bottom: 45px;
+            color: #8b7966;
+            letter-spacing: 0.3px;
+        }
+        
+        .final-cta .cta-button {
+            font-size: 1.2rem;
+            padding: 20px 55px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #faf8f5;
+            color: #6b5d52;
+            padding: 60px;
+            text-align: center;
+            border-top: 1px solid #e8dfd6;
+        }
+        
+        footer p {
+            color: #8b7966;
+            letter-spacing: 0.3px;
+        }
+        
+        .footer-logo {
+            color: #5d4e42;
+            font-size: 1.8rem;
+        }
+        
+        /* Triple Impact Box */
+        .triple-impact {
+            background: #fff;
+            padding: 70px;
+            border-radius: 35px;
+            max-width: 1000px;
+            margin: 90px auto 0;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(184, 154, 126, 0.12);
+        }
+        
+        .triple-impact h3 {
+            font-size: 2.5rem;
+            color: #5d4e42;
+            margin-bottom: 50px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .impact-items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        
+        .impact-item {
+            flex: 1;
+            min-width: 220px;
+        }
+        
+        .impact-item-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .impact-item-icon i {
+            color: #b89a7e;
+            font-size: 4rem;
+        }
+        
+        .impact-item h4 {
+            color: #5d4e42;
+            margin-bottom: 12px;
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .impact-item p {
+            font-size: 1.08rem;
+            color: #6b5d52;
+            letter-spacing: 0.3px;
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Return & Reuse Incentive */
+        .pricing-note {
+            text-align: center;
+            margin-top: 70px;
+            background: #e8dfd6;
+            padding: 50px 60px;
+            border-radius: 30px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 20px rgba(107, 93, 82, 0.1);
+        }
+        
+        .pricing-note h3 {
+            font-size: 2.2rem;
+            color: #5d4e42;
+            margin-bottom: 25px;
+            font-family: 'Brittany Signature', cursive;
+            font-weight: normal;
+            letter-spacing: 0.1em;
+            word-spacing: 0.2em;
+        }
+        
+        .pricing-note p {
+            font-size: 1.25rem;
+            color: #5d4e42;
+            letter-spacing: 0.3px;
+            line-height: 1.8;
+            margin: 0;
+        }
+        
+        .reuse-icon {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .reuse-icon svg {
+            width: 80px;
+            height: 80px;
+            color: #5d4e42;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px 30px;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 120px 30px 80px;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+            
+            section {
+                padding: 80px 30px;
+            }
+            
+            .pricing-card {
+                min-width: 100%;
+                max-width: 100%;
+            }
+            
+            .pricing-card-content {
+                padding: 35px 30px 30px;
+            }
+            
+            .pricing-card-banner {
+                padding: 20px 25px;
+            }
+            
+            .plan-name {
+                font-size: 2rem;
+            }
+            
+            .price {
+                font-size: 3rem;
+                margin: 20px 0 35px 0;
+            }
+            
+            .price-period {
+                font-size: 1.2rem;
+            }
+            
+            .pricing-features li {
+                font-size: 1.1rem;
+                padding: 16px 0;
+            }
+            
+            .hero-icons {
+                gap: 35px;
+            }
+            
+            .steps, .pricing-cards, .impact-grid, .peru-icons {
+                gap: 30px;
+            }
+            
+            .pricing-cards {
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo brand-font">ReWearBaby</div>
+        <ul class="nav-links">
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#story">Our Story</a></li>
+        </ul>
+        <a href="#pricing" class="cta-button">Get Started</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="brand-font">ReWearBaby</h1>
+            <p>Sustainable Baby Wear That Grows With Your Child</p>
+            <p class="tagline">From Peru to Your Baby, With Love <i class="fas fa-map-marker-alt inline-icon"></i><i class="fas fa-heart inline-icon"></i></p>
+            <a href="#pricing" class="cta-button" style="font-size: 1.2rem; padding: 20px 50px;">Start Your Subscription</a>
+            
+            <div class="hero-icons">
+                <div class="hero-icon">
+                    <div class="hero-icon-circle"><i class="fas fa-shopping-bag"></i></div>
+                    <p>Subscribe</p>
+                </div>
+                <div class="hero-icon">
+                    <div class="hero-icon-circle"><i class="fas fa-baby"></i></div>
+                    <p>Wear</p>
+                </div>
+                <div class="hero-icon">
+                    <div class="hero-icon-circle"><i class="fas fa-box"></i></div>
+                    <p>Return</p>
+                </div>
+                <div class="hero-icon">
+                    <div class="hero-icon-circle"><i class="fas fa-recycle"></i></div>
+                    <p>Renew</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works">
+        <h2 class="section-title brand-font">How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Choose Your Plan</h3>
+                <p>Select a subscription plan that fits your needs. From 5-20 pieces per month.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Tell Us About Baby</h3>
+                <p>Share your baby's size, age, and style preferences. We'll curate the perfect wardrobe.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Receive & Enjoy</h3>
+                <p>Get beautifully packaged, medical-grade cleaned clothes delivered to your door.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Swap As Needed</h3>
+                <p>Baby outgrew the clothes? Request a size change anytime. We'll send the next size!</p>
+            </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <h3>Return & Repeat</h3>
+                <p>Use the prepaid shipping label to send back old clothes. We'll clean and recirculate them.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">6</div>
+                <h3>Create Impact</h3>
+                <p>Worn-out items go to Peru for recycling into new garments by local artisans.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing">
+        <h2 class="section-title brand-font">Choose Your Plan</h2>
+        <div class="pricing-cards">
+            <div class="pricing-card full-circle">
+                <div class="pricing-card-banner">
+                    <div class="plan-name brand-font">Full Circle</div>
+                </div>
+                <div class="pricing-card-content">
+                    <div class="price brand-font">$79<span class="price-period">/box</span></div>
+                    <ul class="pricing-features">
+                        <li>100% PreLoved - expertly sanitized & quality-checked</li>
+                        <li>Highest sustainability</li>
+                    </ul>
+                    <a href="#" class="cta-button">Choose Full Circle</a>
+                </div>
+            </div>
+            
+            <div class="pricing-card first-life">
+                <div class="pricing-card-banner">
+                    <div class="plan-name brand-font">First Life</div>
+                </div>
+                <div class="pricing-card-content">
+                    <div class="price brand-font">$149<span class="price-period">/box</span></div>
+                    <ul class="pricing-features">
+                        <li>100% brand-new</li>
+                        <li>Organic Peruvian cotton and approved, safe materials</li>
+                    </ul>
+                    <a href="#" class="cta-button">Choose First Life</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pricing-note">
+            <h3 class="brand-font">Return & Reuse Incentive</h3>
+            <p>Return one full box of approved-quality clothing and receive 30% off your next subscription box</p>
+            <div class="reuse-icon">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact -->
+    <section id="impact">
+        <h2 class="section-title brand-font">Your Impact Matters</h2>
+        <p style="text-align: center; font-size: 1.3rem; max-width: 850px; margin: 0 auto 70px; color: #8b7966; letter-spacing: 0.3px;">
+            Every subscription creates positive change for the planet, your wallet, and communities in Peru
+        </p>
+        <div class="impact-grid">
+            <div class="impact-card">
+                <div class="impact-icon"><i class="fas fa-dollar-sign"></i></div>
+                <div class="impact-number">50-70%</div>
+                <div class="impact-label">Cheaper than buying new<br>Save $600-1,200/year</div>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon"><i class="fas fa-recycle"></i></div>
+                <div class="impact-number">30-50</div>
+                <div class="impact-label">Items saved from landfills<br>per family per year</div>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon"><i class="fas fa-globe-americas"></i></div>
+                <div class="impact-number">5-10x</div>
+                <div class="impact-label">Longer clothing lifespan<br>through sharing</div>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon"><i class="fas fa-handshake"></i></div>
+                <div class="impact-number">100+</div>
+                <div class="impact-label">Peruvian artisans<br>employed (our goal)</div>
+            </div>
+        </div>
+        
+        <div class="triple-impact">
+            <h3>Triple Impact</h3>
+            <div class="impact-items">
+                <div class="impact-item">
+                    <div class="impact-item-icon"><i class="fas fa-chart-line"></i></div>
+                    <h4>Economic</h4>
+                    <p>Save money for families</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-item-icon"><i class="fas fa-leaf"></i></div>
+                    <h4>Environmental</h4>
+                    <p>Reduce textile waste</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-item-icon"><i class="fas fa-users"></i></div>
+                    <h4>Social</h4>
+                    <p>Support artisan communities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Peru Story -->
+    <section id="story">
+        <h2 class="section-title brand-font">From Peru, With Love</h2>
+        <div class="peru-content">
+            <p>
+                Our founder is from Peru, bringing authentic connections to one of the world's finest textile traditions.
+            </p>
+            <p>
+                When baby clothes reach the end of their wearable life, we don't throw them away. Instead, they travel back to Peru, where skilled artisans transform them into beautiful new garments using traditional weaving techniques.
+            </p>
+            <p>
+                This creates stable employment for Peruvian families while preserving centuries-old craftsmanship.
+            </p>
+            
+            <div class="peru-visual">
+                <svg width="600" height="200" style="max-width: 100%;" viewBox="0 0 600 200">
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                            <path d="M0,0 L0,6 L9,3 z" fill="#b89a7e" />
+                        </marker>
+                    </defs>
+                    
+                    <circle cx="100" cy="100" r="60" fill="#f5f0ea" stroke="#b89a7e" stroke-width="3"/>
+                    <foreignObject x="55" y="75" width="90" height="50" style="overflow: visible;">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: center; justify-content: center; height: 100%; color: #b89a7e; font-size: 2.5rem;">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                    </foreignObject>
+                    <text x="100" y="180" text-anchor="middle" fill="#6b5d52" font-size="14" font-weight="500">Peru</text>
+                    
+                    <path d="M160,100 L340,100" stroke="#b89a7e" stroke-width="3" marker-end="url(#arrow)"/>
+                    
+                    <circle cx="400" cy="100" r="60" fill="#f5f0ea" stroke="#b89a7e" stroke-width="3"/>
+                    <foreignObject x="355" y="75" width="90" height="50" style="overflow: visible;">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: center; justify-content: center; height: 100%; color: #b89a7e; font-size: 2.5rem;">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                    </foreignObject>
+                    <text x="400" y="180" text-anchor="middle" fill="#6b5d52" font-size="14" font-weight="500">Your Baby</text>
+                </svg>
+            </div>
+            
+            <div class="peru-icons">
+                <div class="peru-icon-box">
+                    <div class="icon"><i class="fas fa-cut"></i></div>
+                    <h4>Traditional Craftsmanship</h4>
+                    <p>Centuries-old weaving techniques passed down through generations</p>
+                </div>
+                <div class="peru-icon-box">
+                    <div class="icon"><i class="fas fa-industry"></i></div>
+                    <h4>Artisan Employment</h4>
+                    <p>Creating stable jobs for Peruvian families in textile communities</p>
+                </div>
+                <div class="peru-icon-box">
+                    <div class="icon"><i class="fas fa-recycle"></i></div>
+                    <h4>Circular Economy</h4>
+                    <p>Transforming worn-out clothes into beautiful new garments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2 class="brand-font">Ready to Start Your Journey?</h2>
+        <p>Join hundreds of families making a difference, one outfit at a time.</p>
+        <a href="#pricing" class="cta-button">Get Started Today</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo brand-font">ReWearBaby</div>
+        <p style="margin-top: 20px;">Sustainable Baby Wear That Grows With Your Child</p>
+        <p style="margin-top: 15px; font-size: 0.9rem;">© 2026 <span style="color: #5d4e42;">ReWearBaby</span>. All rights reserved.</p>
+    </footer>
+</body>
+</html>
